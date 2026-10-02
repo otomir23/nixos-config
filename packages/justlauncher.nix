@@ -1,4 +1,5 @@
 {
+  flakeMaintainers,
   lib,
   appimageTools,
   fetchurl,
@@ -17,7 +18,7 @@
     mainProgram = "JustLauncher";
     license = lib.licenses.unfree;
     sourceProvenance = with lib.sourceTypes; [ binaryNativeCode ];
-    maintainers = [];
+    maintainers = [ flakeMaintainers.damir ];
     platforms = [ "x86_64-linux" ];
   };
 }

@@ -2,6 +2,8 @@
 #
 # yes i want to have it :3
 {
+  flakeMaintainers,
+
   lib,
   stdenv,
   fetchzip,
@@ -99,7 +101,7 @@ stdenv.mkDerivation (finalAttrs: {
     mainProgram = "fleet";
     homepage = "https://www.jetbrains.com/fleet/";
     license = lib.licenses.unfree;
-    maintainers = [ lib.maintainers.ivyfanchiang ];
+    maintainers = [ flakeMaintainers.damir ];
     sourceProvenance = with lib.sourceTypes; [ binaryNativeCode ];
     changelog = "https://www.jetbrains.com/help/fleet/${lib.versions.majorMinor finalAttrs.version}/release-notes-fleet.html";
   };

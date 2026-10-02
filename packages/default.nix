@@ -1,10 +1,12 @@
 { inputs }: pkgs: let
   system = pkgs.stdenv.hostPlatform.system;
+  flakeMaintainers = import ../maintainers.nix;
+  callPackage = path: params: pkgs.callPackage path (params // { inherit flakeMaintainers; });
 in {
-  jetbrains-fleet = pkgs.callPackage ./fleet.nix {};
-  justlauncher = pkgs.callPackage ./justlauncher.nix {};
-  nightfox-gtk-theme = pkgs.callPackage ./nightfox-gtk-theme.nix {};
-  tidaLuna = pkgs.callPackage ./tidaluna.nix {
+  jetbrains-fleet = callPackage ./fleet.nix {};
+  justlauncher = callPackage ./justlauncher.nix {};
+  nightfox-gtk-theme = callPackage ./nightfox-gtk-theme.nix {};
+  tidaLuna = callPackage ./tidaluna.nix {
     injections = inputs.tidaLuna.packages.${system};
   };
 

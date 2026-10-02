@@ -3,6 +3,7 @@
 # deprecated gtk-engine-murrine dependency removed
 # tracking issue: https://github.com/NixOS/nixpkgs/issues/549887
 {
+  flakeMaintainers,
   lib,
   stdenvNoCC,
   fetchFromGitHub,
@@ -121,6 +122,6 @@ lib.checkListOfEnum "${pname}: colorVariants" colorVariantList colorVariants lib
       homepage = "https://github.com/Fausto-Korpsvart/Nightfox-GTK-Theme";
       license = lib.licenses.gpl3Plus;
       platforms = lib.platforms.unix;
-      maintainers = [ ];
+      maintainers = [ flakeMaintainers.damir ];
     };
   }
