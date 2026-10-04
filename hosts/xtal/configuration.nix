@@ -27,19 +27,22 @@
     iwd = {
       enable = true;
       country = "RU";
+      perfomance = true;
     };
   };
 
   # bootloader stuff
-  boot.loader = {
-    systemd-boot = {
-      enable = true;
-      consoleMode = "max";
+  boot = {
+    loader = {
+      systemd-boot = {
+        enable = true;
+        consoleMode = "max";
+      };
+      efi.canTouchEfiVariables = true;
     };
-    efi.canTouchEfiVariables = true;
+    kernelPackages = pkgs.linuxKernel.packages.linux_7_2;
+    kernelModules = [ "bunny" ];
   };
-  boot.kernelPackages = pkgs.linuxKernel.packages.linux_7_2;
-  boot.kernelModules = [ "bunny" ];
 
   # myself
   users.users.damir = {
