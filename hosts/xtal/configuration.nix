@@ -6,6 +6,7 @@
     };
     console.enable = true;
     nvidia.enable = true;
+    plymouth.enable = true;
     fish.enable = true;
     sshd.enable = true;
     home.enable = true;
