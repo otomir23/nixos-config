@@ -20,6 +20,7 @@ in {
       powerManagement.enable = true;
       package = config.boot.kernelPackages.nvidiaPackages.stable;
     };
+    hardware.graphics.enable = true;
 
     # CUDA support & cache for it
     nix.settings = {

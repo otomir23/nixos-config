@@ -57,7 +57,6 @@
   time.timeZone = "Europe/Moscow";
 
   # hardware stuff
-  hardware.graphics.enable = true;
   powerManagement.cpuFreqGovernor = "performance";
   services.udev.packages = [ pkgs.keychron-udev-rules ];
 
