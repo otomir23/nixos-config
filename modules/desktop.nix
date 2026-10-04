@@ -17,7 +17,6 @@ in {
         variant = "colemak,";
         options = "grp:none";
       };
-      printing.enable = true;
       earlyoom = {
         enable = true;
         enableNotifications = true;

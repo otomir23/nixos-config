@@ -10,6 +10,7 @@
     sshd.enable = true;
     home.enable = true;
     desktop.enable = true;
+    printing.enable = true;
     audio.enable = true;
     bluetooth.enable = true;
     steam.enable = true;
