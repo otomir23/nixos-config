@@ -12,7 +12,10 @@
     home.enable = true;
     desktop.enable = true;
     printing.enable = true;
-    audio.enable = true;
+    audio = {
+      enable = true;
+      perfomance = true;
+    };
     bluetooth.enable = true;
     steam.enable = true;
     tailscale.enable = true;
