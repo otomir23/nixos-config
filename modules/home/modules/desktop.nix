@@ -34,13 +34,13 @@ in {
     };
 
     modules = {
+      awww.enable = true;
       niri.enable = true;
       ghostty.enable = true;
       mako.enable = true;
       vicinae.enable = true;
       zed.enable = true;
     };
-    services.awww.enable = true; # wallpapers
 
     gtk = let
       settings = {
