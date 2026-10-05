@@ -61,6 +61,7 @@
   home-manager.users.damir = ./home.nix;
 
   # hardware stuff
+  services.framework-control.enable = true;
   hardware.sensor.iio.enable = true;
   hardware.acpilight.enable = true;
   services.fstrim.enable = true;

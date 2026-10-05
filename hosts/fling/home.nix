@@ -33,6 +33,9 @@
       prismlauncher
       # misc
       qbittorrent
+      # framework
+      framework-tool
+      framework-control
     ];
 
     # [!] read doc before changing
