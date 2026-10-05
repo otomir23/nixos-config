@@ -10,5 +10,6 @@ in {
       settings.theme = "terafox";
       themes.terafox = import ./theme.nix;
     };
+    home.sessionVariables.EDITOR = "hx";
   };
 })
