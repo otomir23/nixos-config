@@ -1,6 +1,10 @@
 {
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixos-hardware = {
+      url = "github:NixOS/nixos-hardware";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -51,7 +55,7 @@
     # function that builds a NixOS config given a hostname present in ./hosts
     buildHostConfig = hostname: let
       hostpath = ./hosts/${hostname}; # host directory that contains its configuration and metadata
-      metadata = import hostpath; # default.nix is the metadata file
+      metadata = import hostpath { inherit inputs; }; # default.nix is the metadata file
     in {
       system = metadata.system;
       modules = [
