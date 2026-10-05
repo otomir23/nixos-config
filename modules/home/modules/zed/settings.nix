@@ -10,6 +10,8 @@
     light = "Ayu Light";
     dark = "Terafox - blurred";
   };
+  ui_font_family = "Aporetic Sans";
+  buffer_font_family = "Aporetic Sans Mono";
   lsp = {
     nix = {
       binary = {
