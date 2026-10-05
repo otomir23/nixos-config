@@ -13,14 +13,14 @@ in {
 
     programs.eza = {
       enable = true;
-      enableFishIntegration = true;
       icons = "auto";
       extraOptions = [ "-1" "--group-directories-first" "-a" ];
     };
-    programs.zoxide = {
+    programs.direnv = {
       enable = true;
-      enableFishIntegration = true;
+      nix-direnv.enable = true;
     };
+    programs.zoxide.enable = true;
     programs.bat.enable = true;
     programs.ripgrep.enable = true;
     programs.fish = {
@@ -30,5 +30,6 @@ in {
       '';
       plugins = [];
     };
+    home.shell.enableFishIntegration = true;
   };
 })
