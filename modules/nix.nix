@@ -37,5 +37,6 @@ in {
     environment.systemPackages = with pkgs; [
       nix-output-monitor
     ];
+    programs.nix-ld.enable = true;
   };
 })
