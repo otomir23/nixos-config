@@ -60,6 +60,9 @@
   };
   home-manager.users.damir = ./home.nix;
 
+  # setting my time zone
+  time.timeZone = "Europe/Moscow";
+
   # hardware stuff
   services.framework-control.enable = true;
   hardware.sensor.iio.enable = true;
