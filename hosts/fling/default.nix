@@ -1,4 +1,9 @@
 { inputs }: {
+  listen = {
+    artist = "Jane Remover";
+    track = "Fling";
+    album = "Census Designated";
+  };
   system = "x86_64-linux";
   modules = [
     ./hardware-configuration.nix
