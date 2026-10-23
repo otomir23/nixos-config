@@ -43,10 +43,10 @@
       };
       efi.canTouchEfiVariables = true;
     };
+    initrd.systemd.enable = true;
     kernelPackages = pkgs.linuxPackages_7_2;
     kernelModules = [ "bunny" ];
     kernelParams = [
-      "nvme.noacpi=1"
       "mem_sleep_default=deep"
     ];
   };
@@ -74,6 +74,21 @@
     enable = true;
     powertop.enable = true;
     cpuFreqGovernor = "powersave";
+  };
+
+  # hibernation. i have 64 gb ram so i have to reserve 72 gb :c
+  swapDevices = [ {
+    device = "/var/lib/hibernate-swap";
+    size = 72 * 1024;
+  } ];
+  systemd.sleep.settings.Sleep = {
+    HibernateDelaySec = "2h";
+    HibernateOnACPower = false;
+  };
+  services.logind.settings.Login = {
+    HandleLidSwitch = "sleep";
+    HandleSuspendKey = "sleep";
+    SleepOperation = "suspend-then-hibernate suspend";
   };
 
   # KDE Connect
