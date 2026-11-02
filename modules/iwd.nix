@@ -7,8 +7,8 @@ in {
       description = "Two-letter uppercase country code for device region";
       type = lib.types.str;
     };
-    perfomance = lib.mkOption {
-      description = "Optimize for perfomance at the cost of power efficency.";
+    performance = lib.mkOption {
+      description = "Optimize for performance at the cost of power efficency.";
       default = false;
       type = lib.types.bool;
     };
@@ -35,7 +35,7 @@ in {
         };
       };
     };
-    boot.extraModprobeConfig = lib.mkIf cfg.perfomance  ''
+    boot.extraModprobeConfig = lib.mkIf cfg.performance  ''
       options iwlwifi bt_coex_active=N
       options iwlwifi power_save=N
       options iwlmvm power_scheme=1

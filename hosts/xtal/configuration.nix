@@ -14,7 +14,7 @@
     printing.enable = true;
     audio = {
       enable = true;
-      perfomance = true;
+      performance = true;
     };
     bluetooth.enable = true;
     steam.enable = true;
@@ -31,7 +31,7 @@
     iwd = {
       enable = true;
       country = "RU";
-      perfomance = true;
+      performance = true;
     };
   };
 

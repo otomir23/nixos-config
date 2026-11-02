@@ -3,8 +3,8 @@
 in {
   options.modules.audio = {
     enable = lib.mkEnableOption "PipeWire audio and musnix tuning";
-    perfomance = lib.mkOption {
-      description = "Optimize for perfomance at the cost of power efficency.";
+    performance = lib.mkOption {
+      description = "Optimize for performance at the cost of power efficency.";
       default = false;
       type = lib.types.bool;
     };
@@ -19,11 +19,11 @@ in {
       pulse.enable = true;
       jack.enable = true;
     };
-    musnix = lib.mkIf cfg.perfomance {
+    musnix = lib.mkIf cfg.performance {
       enable = true;
       rtcqs.enable = true;
     };
-    boot.kernelParams = lib.mkIf cfg.perfomance [ "threadirqs" "iommu=pt" ];
+    boot.kernelParams = lib.mkIf cfg.performance [ "threadirqs" "iommu=pt" ];
     environment.systemPackages = with pkgs; [
       wiremix
     ];
