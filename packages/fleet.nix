@@ -29,7 +29,7 @@ stdenv.mkDerivation (finalAttrs: {
   version = "1.48.261";
 
   src = fetchzip {
-    url = "https://download-cdn.jetbrains.com/fleet/installers/linux_x64/Fleet-${finalAttrs.version}.tar.gz";
+    url = "https://download.jetbrains.com/fleet/installers/linux_x64/Fleet-${finalAttrs.version}.tar.gz";
     hash = "sha256-rDcc8v43vEw0ayOD+awMYWI19kuTcssIi03r1UJeC4M=";
     stripRoot = true;
   };

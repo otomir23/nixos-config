@@ -9,6 +9,9 @@ in {
   tidaLuna = callPackage ./tidaluna.nix {
     injections = inputs.tidaLuna.packages.${system};
   };
+  ableton-live = callPackage ./ableton-live.nix {
+    ableton-linux = inputs.ableton-linux.packages.${system}.default;
+  };
 
   # packages from flakes that dont provide their own overlay
   helium = inputs.helium-nix.packages.${system}.default;

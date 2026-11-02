@@ -43,7 +43,7 @@
       };
       efi.canTouchEfiVariables = true;
     };
-    initrd.systemd.enable = true;
+
     kernelPackages = pkgs.linuxPackages_7_2;
     kernelModules = [ "bunny" ];
     kernelParams = [

@@ -2,14 +2,15 @@
 # https://github.com/Inrixia/TidaLuna/blob/master/nix/linux-package.nix
 # https://github.com/Inrixia/TidaLuna/blob/master/nix/darwin-package.nix
 #
-# pnpm isn't pinned to v10 in official TidaLuna packaging
-# it breaks with my updated nixpkgs version beacause new pnpm versions dropped v3 fetcher support
-# pinning it to v10 so it works again
-{ flakeMaintainers, stdenv, tidal-hifi, tidal, pnpm_10, injections, fetchPnpmDeps }: let
-  pnpm = pnpm_10;
+# wrapper to update fetcher hash
+{ flakeMaintainers, stdenv, tidal-hifi, tidal, pnpm_12, injections, fetchPnpmDeps }: let
+  pnpm = pnpm_12;
   mkInjection = prev: prev.override {
     inherit pnpm;
-    fetchPnpmDeps = { ... }@params: fetchPnpmDeps ({ inherit pnpm; } // params);
+    fetchPnpmDeps = { ... }@params: fetchPnpmDeps (params // {
+      inherit pnpm;
+      hash = "sha256-i4a9Vh10Ri8kBlXGnn59PI8I0AZJhZa8KuPcOdhKxVA=";
+    });
   };
   linuxPkg = tidal-hifi.overrideAttrs (oldAttrs: {
     postInstall = ''

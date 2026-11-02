@@ -29,8 +29,8 @@
       url = "github:otomir23/ligma";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    tetra-nurpkgs = {
-      url = "github:tetra-fox/nurpkgs";
+    ableton-linux = {
+      url = "github:shibco/ableton-linux";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     musnix = {
@@ -68,7 +68,6 @@
         ({ ... }: {
           nixpkgs.overlays = [
             inputs.ligma.overlays.default
-            inputs.tetra-nurpkgs.overlays.default
             customPackagesOverlay
           ];
         })
