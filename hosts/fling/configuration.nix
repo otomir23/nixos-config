@@ -44,7 +44,7 @@
       efi.canTouchEfiVariables = true;
     };
 
-    kernelPackages = pkgs.linuxPackages_7_2;
+    kernelPackages = pkgs.linuxPackages_7_3;
     kernelModules = [ "bunny" ];
     kernelParams = [
       "mem_sleep_default=deep"
