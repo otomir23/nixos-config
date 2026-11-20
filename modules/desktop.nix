@@ -1,4 +1,4 @@
-({ config, lib, ... }: let
+({ config, lib, pkgs, ... }: let
   cfg = config.modules.desktop;
 in {
   options.modules.desktop = {
@@ -22,6 +22,10 @@ in {
         enableNotifications = true;
       };
     };
+
+    environment.systemPackages = [
+      pkgs.waypipe
+    ];
 
     systemd.services.display-manager.environment.XDG_CURRENT_DESKTOP = "X-NIXOS-SYSTEMD-AWARE";
   };
